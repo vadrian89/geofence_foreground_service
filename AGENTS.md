@@ -18,11 +18,14 @@ This is a Flutter plugin providing geofencing with persistent foreground service
 - **Intent Extras:** Names are generated via `extraNameGen` utility to prevent collisions with other plugins.
 - **Zone Processing:** The plugin calculates the center of polygon coordinates on Android to register a circular geofence (`GeofenceBuilder.kt`).
 
+## Documentation Rule
+- Do not use local absolute file paths (for example, `/home/...`) or `file://` links in docs; use repository-relative paths only.
+
 ## Key Files
-- [geofence_foreground_service.dart](file:///home/vadrian/Birou/Workspace/Flutter_workspace/geofence_foreground_service/lib/geofence_foreground_service.dart) - Public Dart API.
-- [GeofenceForegroundServicePlugin.kt](file:///home/vadrian/Birou/Workspace/Flutter_workspace/geofence_foreground_service/android/src/main/kotlin/com/f2fk/geofence_foreground_service/GeofenceForegroundServicePlugin.kt) - Android bridge.
-- [BackgroundWorker.kt](file:///home/vadrian/Birou/Workspace/Flutter_workspace/geofence_foreground_service/android/src/main/kotlin/com/f2fk/geofence_foreground_service/BackgroundWorker.kt) - Manages background Dart execution.
-- [SharedPreferenceHelper.kt](file:///home/vadrian/Birou/Workspace/Flutter_workspace/geofence_foreground_service/android/src/main/kotlin/com/f2fk/geofence_foreground_service/utils/SharedPreferenceHelper.kt) - Manages persistence of callback handles and service configuration.
+- `lib/geofence_foreground_service.dart` - Public Dart API.
+- `android/src/main/kotlin/com/f2fk/geofence_foreground_service/GeofenceForegroundServicePlugin.kt` - Android bridge.
+- `android/src/main/kotlin/com/f2fk/geofence_foreground_service/BackgroundWorker.kt` - Manages background Dart execution.
+- `android/src/main/kotlin/com/f2fk/geofence_foreground_service/utils/SharedPreferenceHelper.kt` - Manages persistence of callback handles and service configuration.
 
 ## Developer Workflow
 - **Environment:** Requires Android `minSdkVersion` 29+ and iOS 12.0+.
