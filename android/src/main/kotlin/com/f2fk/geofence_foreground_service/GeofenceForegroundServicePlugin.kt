@@ -10,7 +10,7 @@ import android.content.Context
 import android.content.Context.ACTIVITY_SERVICE
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.util.Log
+import androidx.annotation.RequiresPermission
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.f2fk.geofence_foreground_service.builders.GeofenceBuilder
@@ -20,7 +20,6 @@ import com.f2fk.geofence_foreground_service.models.NotificationIconData
 import com.f2fk.geofence_foreground_service.models.Zone
 import com.f2fk.geofence_foreground_service.models.ZonesList
 import com.f2fk.geofence_foreground_service.utils.SharedPreferenceHelper
-import com.f2fk.geofence_foreground_service.utils.Utils
 import com.f2fk.geofence_foreground_service.utils.extraNameGen
 import com.google.android.gms.location.GeofencingClient
 import com.google.android.gms.location.LocationServices
@@ -68,6 +67,7 @@ class GeofenceForegroundServicePlugin : FlutterPlugin, MethodCallHandler, Activi
         context = flutterPluginBinding.applicationContext
     }
 
+    @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     override fun onMethodCall(call: MethodCall, result: Result) = when (call.method) {
         ApiMethods.startGeofencingService -> startGeofencingService(call, result)
         ApiMethods.stopGeofencingService -> stopGeofencingService(result)
@@ -144,6 +144,7 @@ class GeofenceForegroundServicePlugin : FlutterPlugin, MethodCallHandler, Activi
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
     )
 
+    @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     private fun addGeofence(zone: Zone, result: Result) {
         if (!SharedPreferenceHelper.hasCallbackHandle(context)) {
             result.error(
@@ -186,7 +187,7 @@ class GeofenceForegroundServicePlugin : FlutterPlugin, MethodCallHandler, Activi
                 )
             }
     }
-
+    @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     private fun addGeoFences(zones: ZonesList, result: Result) {
         (zones.zones ?: emptyList()).forEach { addGeofence(it, result) }
     }
