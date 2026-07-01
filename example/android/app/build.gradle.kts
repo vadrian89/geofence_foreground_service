@@ -5,6 +5,7 @@ plugins {
 }
 
 val sdkVersion = 36
+val javaVersion = JavaVersion.VERSION_17
 
 android {
     namespace = "com.f2fk.geofence_foreground_service_example"
@@ -14,12 +15,12 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
 
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = javaVersion.toString()
     }
 
     defaultConfig {
