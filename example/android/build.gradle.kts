@@ -20,7 +20,7 @@ allprojects {
 }
 
 // Set the root project build directory.
-val newBuildDir = file("../../build")
+val newBuildDir = file("../build")
 rootProject.layout.buildDirectory.set(newBuildDir)
 
 // Set each subproject's build directory inside the shared build folder.
