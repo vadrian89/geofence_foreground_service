@@ -15,7 +15,7 @@ android {
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
 
-        sourceCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
     }
 
