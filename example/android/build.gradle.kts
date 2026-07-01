@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.1.0")
+        classpath("com.android.tools.build:gradle:8.13.2")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version")
     }
 }
@@ -20,7 +20,7 @@ allprojects {
 }
 
 // Set the root project build directory.
-val newBuildDir = file("../build")
+val newBuildDir = file("../../build")
 rootProject.layout.buildDirectory.set(newBuildDir)
 
 // Set each subproject's build directory inside the shared build folder.
