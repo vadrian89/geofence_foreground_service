@@ -13,7 +13,7 @@ great source of inspiration while creating this plugin.
 
 Android|iOS
 --|--
-![Android Demo](https://github.com/Basel-525k/geofence_foreground_service/blob/main/assets/gifs/Geofencing_Android.gif)|![iOS Demo](https://github.com/Basel-525k/geofence_foreground_service/blob/main/assets/gifs/Geofencing_iOS.gif)
+![Android Demo](https://raw.githubusercontent.com/Basel-525k/geofence_foreground_service/main/assets/gifs/Geofencing_Android.gif)|![iOS Demo](https://raw.githubusercontent.com/Basel-525k/geofence_foreground_service/main/assets/gifs/Geofencing_iOS.gif)
 
 ## Features
 
@@ -64,7 +64,7 @@ platform :ios, '12.0'
 <string>This app need your location to provide best feature based on location</string>
 ```
 - Turn on the `Location updates` and `Background fetch` capabilities from XCode
-  ![iOS capabilities](https://github.com/Basel-525k/geofence_foreground_service/blob/main/assets/images/ios_setup_steps.png?raw=true)
+  ![iOS capabilities](https://raw.githubusercontent.com/Basel-525k/geofence_foreground_service/main/assets/images/ios_setup_steps.png)
 
 ## Example
 
@@ -168,12 +168,6 @@ permissions (it's used in the example too)
 - locationAlways
 - notification
 
-## Contributing Guidelines
+## Contributing
 
-We welcome contributions from the community. If you'd like to contribute to the development of this
-plugin, please feel free to submit a PR to our GitHub repository.
-
-**Please consider**
-- Making sure that all test cases pass and add new cases if needed
-- Bumping the version of the plugin
-- Adding new changes to the CHANGELOG.md
+We welcome contributions. Please read **[CONTRIBUTING.md](CONTRIBUTING.md)** for pull request expectations (including **small PRs** and a **maximum of 15 files** per PR), testing, changelog updates, and review practices.

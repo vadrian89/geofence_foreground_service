@@ -2,7 +2,11 @@
 
 Pod::Spec.new do |s|
   s.name             = 'geofence_foreground_service'
+<<<<<<< HEAD
   s.version          = '1.1.4'
+=======
+  s.version          = '1.1.7'
+>>>>>>> main-upstream
   s.summary          = 'A Flutter project that creates a foreground service to handle geofencing.'
   s.description      = <<-DESC
 A Flutter project that creates a foreground service to handle geofencing.
@@ -18,11 +22,12 @@ A Flutter project that creates a foreground service to handle geofencing.
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '' }
+  s.source_files     = 'geofence_foreground_service/Sources/**/*.swift'
 
   s.swift_versions   = ['5.1']
   s.static_framework = true
 
   s.dependency 'Flutter'
 
-  s.preserve_paths = 'Classes/**'
+  s.preserve_paths = 'geofence_foreground_service/Sources/**'
 end

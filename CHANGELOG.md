@@ -1,8 +1,26 @@
+## 1.1.7
+* Dart API: add input validation to reject invalid `startGeofencingService` and `addGeofenceZone` calls before they reach platform channels
+* Android: harden geofence center calculation/building with explicit non-empty coordinate preconditions
+* Tests: replace outdated Android plugin test, add focused Android model/utility unit tests, and expand Dart method-channel/integration coverage (including fake-platform flows and event-type mapping)
+* iOS/example: modernize example runner setup (deployment target 13, scene/engine registration updates, permission-handler flags) and improve permission logging/behavior in the Flutter example app
+* Build/setup: update Android test dependencies/config, resolve Flutter SDK jar for compile-only imports, and clean example ignore/build artifacts
+
 ## 1.1.6
 * Removed arm64 from excluded architecures for iphone simulators from both example and project
 * Added launch.json for example, for vscode
 * Added example's .build and .swiftpm folders to gitignore
 * Replaced @UIApplicationMain with @main macro in AppDelegate
+* Android: handle a missing or null start `Intent` by persisting extras, reusing saved data, or stopping the service when neither is available
+* Android: fix crashes on Android 10+ with background location checks, `FOREGROUND_SERVICE_TYPE_LOCATION` for `startForeground`, and clean stop (service + notification) on STOP
+* Android: monitor background location permission and stop the service when it is revoked; extend `GeofenceServiceAction` with STOP for service control
+* Example app and docs: clearer permission handling across lifecycle (e.g. on resume) and README updates
+* iOS: implement `removeAllGeoFences` on the method channel (stop monitoring for all regions)
+* Android: implement `removeAllGeoFences` and use a single consistent geofence trigger `PendingIntent` so `removeGeofences` can clear every registration
+* iOS: fix `removeGeofence` (match by zone id, stop the region, return a proper result); Android: per-zone `PendingIntent` request codes and SharedPreferences tracking of registered zone IDs
+* Android: refactor geofence addition for asynchronous registration with clearer success/error handling; iOS: fix `removeAllGeoFences` result callback semantics
+* Persist debug mode via `SharedPreferenceHelper` (service and plugin) instead of relying only on intent extras
+* Align iOS CocoaPods `podspec` version with the Dart package
+* iOS: add Swift Package Manager support (`ios/geofence_foreground_service/Package.swift`); native sources live under `Sources/geofence_foreground_service/`
 
 ## 1.1.5
 * Remove Shim package from Android to support newer Flutter versions
