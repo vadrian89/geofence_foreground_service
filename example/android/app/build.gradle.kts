@@ -4,20 +4,23 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+val sdkVersion = 36
+val javaVersion = JavaVersion.VERSION_17
+
 android {
     namespace = "com.f2fk.geofence_foreground_service_example"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = sdkVersion
     ndkVersion = "29.0.13113456"
 
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
 
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = javaVersion.toString()
     }
 
     defaultConfig {
@@ -26,7 +29,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdk = 29
-        targetSdk = flutter.targetSdkVersion
+        targetSdk = sdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
