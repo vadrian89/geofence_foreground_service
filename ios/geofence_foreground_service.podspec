@@ -2,11 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'geofence_foreground_service'
-<<<<<<< HEAD
-  s.version          = '1.1.4'
-=======
   s.version          = '1.1.7'
->>>>>>> main-upstream
   s.summary          = 'A Flutter project that creates a foreground service to handle geofencing.'
   s.description      = <<-DESC
 A Flutter project that creates a foreground service to handle geofencing.
