@@ -10,11 +10,10 @@ A Flutter project that creates a foreground service to handle geofencing.
   s.homepage         = 'https://pub.dev/packages/geofence_foreground_service'
   s.license          = { :type => 'Apache-2.0', :file => '../LICENSE' }
   s.author           = { 'Basel' => 'basel@525k.io' }
-  s.platform         = :ios, '12.0'
+  s.platform         = :ios, '13.0'
 
   s.source           = { :git => 'https://github.com/Basel-525k/geofence_foreground_service.git' }
 
-  s.source_files     = 'Classes/**/*'
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => '' }
