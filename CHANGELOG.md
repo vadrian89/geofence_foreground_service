@@ -1,3 +1,10 @@
+## 1.1.8
+* iOS/example: bump minimum deployment target to iOS 13.0 (podspec and example project), restructure `MyApp` to run under a top-level `MaterialApp`/`Builder`, and clean up permission-handling message formatting
+* Example: update `permission_handler` dependency to `^13.0.2`
+* Android/build: upgrade Gradle wrapper to 8.13, Android Gradle Plugin to 8.13.2, Kotlin to 2.2.21, and `compileSdk`/`targetSdk` to 36; raise Java/Kotlin compatibility to 17 across the plugin and example, add the Foojay toolchain resolver, and increase example Gradle JVM heap
+* Flutter SDK: bump to 3.44.9 (`.fvmrc`) and align tooling configuration
+* Docs: update README `minSdk`/`minSdkVersion` guidance to cover both Groovy and Kotlin DSL build files
+
 ## 1.1.7
 * Dart API: add input validation to reject invalid `startGeofencingService` and `addGeofenceZone` calls before they reach platform channels
 * Android: harden geofence center calculation/building with explicit non-empty coordinate preconditions
