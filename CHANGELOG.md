@@ -1,3 +1,9 @@
+## 1.2.0
+* Android/build: migrate the plugin and example app to Flutter's built-in Kotlin support, removing the explicit `kotlin-android` plugin application and `kotlinOptions` block in favor of the `kotlin { compilerOptions { ... } } ` DSL and `android.builtInKotlin=true`
+* Android/build: upgrade Android Gradle Plugin to 9.0.1 (which now bundles the Kotlin Gradle Plugin at runtime, so it no longer needs to be declared explicitly) and Gradle wrapper to 9.1.0 for both the plugin and the example app
+* Example: raise `compileSdk`/`targetSdk` to 37 to satisfy `permission_handler_android`'s requirement
+* Updates the minimum supported SDK version to Flutter 3.44/Dart 3.12
+
 ## 1.1.8
 * iOS/example: bump minimum deployment target to iOS 13.0 (podspec and example project), restructure `MyApp` to run under a top-level `MaterialApp`/`Builder`, and clean up permission-handling message formatting
 * Example: update `permission_handler` dependency to `^13.0.2`

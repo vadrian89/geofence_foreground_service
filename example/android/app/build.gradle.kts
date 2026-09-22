@@ -1,10 +1,9 @@
 plugins {
     id("com.android.application")
-    id("kotlin-android")
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-val sdkVersion = 36
+val sdkVersion = 37
 val javaVersion = JavaVersion.VERSION_17
 
 android {
@@ -17,10 +16,6 @@ android {
 
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
-    }
-
-    kotlinOptions {
-        jvmTarget = javaVersion.toString()
     }
 
     defaultConfig {
@@ -45,6 +40,12 @@ android {
 
 flutter {
     source = "../.."
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
 }
 
 dependencies {
