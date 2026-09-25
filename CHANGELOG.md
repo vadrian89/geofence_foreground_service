@@ -6,10 +6,15 @@
 
 ## 1.1.8
 * iOS/example: bump minimum deployment target to iOS 13.0 (podspec and example project), restructure `MyApp` to run under a top-level `MaterialApp`/`Builder`, and clean up permission-handling message formatting
-* Example: update `permission_handler` dependency to `^13.0.2`
 * Android/build: upgrade Gradle wrapper to 8.13, Android Gradle Plugin to 8.13.2, Kotlin to 2.2.21, and `compileSdk`/`targetSdk` to 36; raise Java/Kotlin compatibility to 17 across the plugin and example, add the Foojay toolchain resolver, and increase example Gradle JVM heap
 * Flutter SDK: bump to 3.44.9 (`.fvmrc`) and align tooling configuration
 * Docs: update README `minSdk`/`minSdkVersion` guidance to cover both Groovy and Kotlin DSL build files
+* iOS: fix build by adding the missing `import UIKit` in `Extensions.swift` (`UIBackgroundFetchResult`)
+* iOS: migrate plugin to Swift Package Manager: `Package.swift` now depends on `FlutterFramework` (required by Flutter 3.44) and targets iOS 13.0; podspec kept for CocoaPods compatibility, with iOS 13.0 and the stale `Classes/**/*` source path removed
+* iOS/example: enable Swift Package Manager in the example runner (`FlutterGeneratedPluginSwiftPackage`, prepare-framework scheme pre-action); CocoaPods stays only for `permission_handler_apple`
+* Example: update `permission_handler` to ^13.0.2, wrap the app in a top-level `MaterialApp` so the permission snackbars have a `ScaffoldMessenger`, and reformat `main.dart`
+* Tooling: update Flutter SDK to 3.44.9 (`.fvmrc`, VS Code settings)
+* Add `.gitignore` for the iOS package (`.build/`, `.swiftpm/`)
 
 ## 1.1.7
 * Dart API: add input validation to reject invalid `startGeofencingService` and `addGeofenceZone` calls before they reach platform channels
